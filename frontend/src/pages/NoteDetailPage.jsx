@@ -71,6 +71,18 @@ const NoteDetailPage = () => {
     );
   }
 
+  if (!note) {
+    return (
+      <div className="min-h-screen bg-base-200 flex flex-col items-center justify-center gap-4">
+        <p className="text-lg">Note not found.</p>
+        <Link to="/" className="btn btn-primary">
+          <ArrowLeftIcon className="h-5 w-5" />
+          Back to Notes
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-base-200">
       <div className="container mx-auto px-4 py-8">
