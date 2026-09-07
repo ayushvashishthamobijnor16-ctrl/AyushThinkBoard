@@ -3,6 +3,8 @@ import { Route, Routes } from "react-router";
 import HomePage from "./pages/Homepage";
 import CreatePage from "./pages/Createpage";
 import NoteDetailPage from "./pages/NoteDetailPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = () => {
   return (
@@ -12,8 +14,11 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
         <Route path="/note/:id" element={<NoteDetailPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );
 };
+
 export default App;

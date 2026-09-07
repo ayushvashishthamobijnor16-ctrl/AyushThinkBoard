@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import notesRoutes from "./routes/notesRoutes.js";
 import connectDB from "./config/db.js";
 import rateLimiter from "./middleware/ratelimiter.js";
+import authRoutes from "./routes/auth.js";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ if (process.env.NODE_ENV !== "production") {
 app.use(express.json());
 app.use(rateLimiter);
 
+app.use("/api/auth", authRoutes);
 app.use("/api/notes", notesRoutes);
 
 if (process.env.NODE_ENV === "production") {
